@@ -23,7 +23,7 @@ LangGraph 워크플로 · 사전 우선 + LLM 보완 · 개인 프로젝트
 </details>
 
 <details>
-<summary><b>2. 핵심 결정 세 가지</b></summary>
+<summary><b>2. 핵심 결정 세 가지</b> · 그림 3장</summary>
 
 
 결정 ① 사전을 먼저 쓰고, 사전에서 못 찾을 때만 LLM을 씁니다
@@ -41,7 +41,7 @@ LangGraph 워크플로 · 사전 우선 + LLM 보완 · 개인 프로젝트
 </details>
 
 <details>
-<summary><b>3. 구조</b></summary>
+<summary><b>3. 구조</b> · 그림 1장</summary>
 
 
 모든 분기를 한 장에 그린 전체본입니다. 파란 칸은 LLM이 판단해 길이 갈리는 곳, 회색 칸은 코드가 가르는 곳입니다. 노드 단위로 줄인 한 장 요약과 확대 그림(사전에서 못 찾은 말, 답변 생성 칸, 되묻기 · 설명 뒤 다음 턴)은 [기획서 7-1](docs/plan/PoC_기획서.md)에 있고, 그림 원본(.mmd)은 `docs/plan`에 있습니다.
@@ -116,7 +116,7 @@ LangGraph 워크플로 · 사전 우선 + LLM 보완 · 개인 프로젝트
 </details>
 
 <details>
-<summary><b>5. 실행 기록 (랭퓨즈)</b></summary>
+<summary><b>5. 실행 기록 (랭퓨즈)</b> · 그림 4장</summary>
 
 
 실제 LLM 실행은 랭퓨즈에 노드별로 남겼습니다. 틀린 답이 나오면 이 기록에서 어느 노드에서 틀어졌는지 찾아 고쳤습니다. 아래는 개발용 문항 실행(2026.11.12)의 화면입니다.
@@ -219,7 +219,7 @@ python eval/run_compliance.py                           # 검수 단독 문장 2
 </details>
 
 <details>
-<summary><b>8. 프로젝트 슬라이드 (초안)</b></summary>
+<summary><b>8. 프로젝트 슬라이드</b> · 슬라이드 그림 18장</summary>
 
 
 기획 내용을 정리한 슬라이드입니다. 4차 결과(평가용 데이터셋 · 측정용 문항)까지 반영했고, 자세한 숫자는 위 4번 표에 있습니다.

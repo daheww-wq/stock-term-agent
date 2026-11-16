@@ -220,7 +220,7 @@ LangGraph 워크플로 · 사전 우선 + LLM 보완 · 개인 프로젝트
 </details>
 
 <details>
-<summary><b>7. 구조</b></summary>
+<summary><b>7. 구조</b> · 그림 6장</summary>
 
 
 **7-1. 흐름**
@@ -317,7 +317,7 @@ LangGraph 워크플로 · 사전 우선 + LLM 보완 · 개인 프로젝트
 </details>
 
 <details>
-<summary><b>8. 화면</b></summary>
+<summary><b>8. 화면</b> · 그림 5장</summary>
 
 
 - PoC 응답 유형을 채팅 화면으로 옮긴 화면설계서(wireframe). 화면은 개발 전 설계안
