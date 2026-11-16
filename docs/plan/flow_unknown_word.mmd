@@ -1,0 +1,11 @@
+flowchart TD
+    A["<b>조회에서 못 찾은 용어</b>"] --> B("<b>사전 말과 글자가 가까운가</b><br/><small>코드</small>")
+    B -->|"가깝고 후보가 하나<br/>(자모 하나 차이)"| R1["<b>① 사전으로 잇기 + 오타 확인 문구</b><br/><small>'익쩔'을 '익절'로 보고 설명드릴게요.</small>"]
+    B -->|"가깝지만 확실하지 않음<br/>(후보 둘, 또는 자모 둘 차이)"| R2["<b>② 후보를 보여 주며 되묻기</b><br/><small>혹시 '떡상'을 말씀하신 건가요?</small>"]
+    B -->|"가까운 말 없음"| C("<b>LLM이 뜻을 아는가</b><br/><small>확신 / 짐작 / 모름 / 기본 어휘 중 하나로 적음</small>")
+    C -->|"확신 · 기본 어휘"| R3["<b>③ 사전 밖 안내 + 단정하지 않는 설명</b><br/><small>첫 문장은 코드가 붙임<br/>'상폐'는 사전에 등록되지 않은 용어라<br/>일반적인 설명으로 안내해요.<br/>+ 공식 자료 확인</small>"]
+    C -->|"짐작 · 모름"| R4["<b>④ 뜻을 말하지 않고 되묻기</b><br/><small>'○○'는 확인되지 않은 단어예요.<br/>어떤 뜻으로 들으셨는지 알려주시면<br/>이어서 설명해드릴게요.</small>"]
+    classDef llm fill:#eef3ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1d4ed8
+    classDef dec fill:#f3f4f7,stroke:#9aa3b5,stroke-width:1.2px
+    class B dec
+    class C llm

@@ -1,0 +1,42 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	n0_rewrite(n0_rewrite)
+	n1_dict_normalize(n1_dict_normalize)
+	n2_llm_normalize(n2_llm_normalize)
+	n3_intent(n3_intent)
+	n4_lookup(n4_lookup)
+	n5_answer(n5_answer)
+	n6_compliance(n6_compliance)
+	n7_safe_answer(n7_safe_answer)
+	n8_out_of_scope(n8_out_of_scope)
+	n9_clarify(n9_clarify)
+	finish(finish)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> n0_rewrite;
+	n0_rewrite -.-> n1_dict_normalize;
+	n0_rewrite -.-> n3_intent;
+	n1_dict_normalize -.-> n2_llm_normalize;
+	n1_dict_normalize -.-> n3_intent;
+	n2_llm_normalize -.-> n3_intent;
+	n2_llm_normalize -.-> n9_clarify;
+	n3_intent -.-> n4_lookup;
+	n3_intent -.-> n5_answer;
+	n3_intent -.-> n8_out_of_scope;
+	n4_lookup -.-> n2_llm_normalize;
+	n4_lookup -.-> n5_answer;
+	n5_answer --> n6_compliance;
+	n6_compliance -.-> finish;
+	n6_compliance -.-> n5_answer;
+	n6_compliance -.-> n7_safe_answer;
+	n7_safe_answer --> finish;
+	n8_out_of_scope --> finish;
+	n9_clarify --> finish;
+	finish --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

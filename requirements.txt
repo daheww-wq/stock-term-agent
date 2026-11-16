@@ -1,0 +1,7 @@
+python-dotenv
+openai
+langgraph
+langchain
+langchain-openai
+langfuse
+openpyxl

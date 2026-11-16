@@ -1,0 +1,23 @@
+flowchart TD
+    IN(["노드 5로 들어옴<br/><small>용어 설명 · 매매 판단 요청 · 하소연</small>"]) --> V("<b>하소연인가</b><br/><small>의도 분류 결과</small>")
+    V -->|"예"| V5["<b>공감 한 문장 (LLM)</b><br/><small>+ 서비스 안내 · 용어 제안 (고정 문장)</small>"]
+    V -->|"아니오"| W0["<b>LLM 답변</b><br/><small>응답 정책대로 · 사전 설명을 근거로<br/>매매 판단을 묻는 질문이면 분류와 상관없이 첫 문장에 판단 불가 안내</small>"]
+    W0 --> W1("<b>LLM이 뜻을 아는가</b>")
+    W1 -->|"모름 표시"| W3["<b>되묻기 문장으로 바꿈 (코드)</b><br/><small>'○○'는 확인되지 않은 단어예요…<br/>매매 판단이면 판단 불가 안내를 앞에</small>"]
+    W1 -->|"앎"| W2("<b>문장 조립 (코드)</b><br/><small>답에 무엇이 들어 있나</small>")
+    W2 -->|"사전 밖 용어"| X1["<b>사전 밖 안내 첫 문장</b><br/><small>사용자가 쓴 말 그대로 · 매매 판단이면 판단 불가 안내 다음</small>"]
+    W2 -->|"오타로 고쳐 읽은 말"| X2["<b>오타 확인 문구</b><br/><small>'익쩔'을 '익절'로 보고 설명드릴게요.</small>"]
+    W2 -->|"사용자가 알려 준 뜻"| X3["<b>들은 뜻으로 받음</b><br/><small>맞다고 확인해 주지 않음 · 사전 밖 안내 없음</small>"]
+    V5 --> N6
+    W3 --> N6
+    X1 --> N6
+    X2 --> N6
+    X3 --> N6
+    N6("<b>6 검수 (LLM)</b><br/><small>답과 질문을 함께 봄</small>")
+    N6 -->|"위반: 5로 돌아가 다시 쓰기 (2번까지)"| V
+    N6 -->|"통과"| F(["끝"])
+    N6 -->|"2번 뒤에도 위반"| N7["<b>7 안전 답변</b><br/><small>안내만 빠졌으면 안내를 붙여 내보냄 · 그 밖이면 고정 문구</small>"]
+    classDef llm fill:#eef3ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1d4ed8
+    classDef dec fill:#f3f4f7,stroke:#9aa3b5,stroke-width:1.2px
+    class V,W2 dec
+    class W0,W1,N6 llm

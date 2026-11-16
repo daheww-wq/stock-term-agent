@@ -1,0 +1,17 @@
+# 비밀 키
+.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# 편집기·OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 실행 결과
+results/
