@@ -407,3 +407,7 @@ python eval/run_compliance.py                           # 검수 단독 문장 2
 - 참고한 규제 방향은 PoC 수준이며 법률 검토를 거친 내용이 아닙니다
 
 </details>
+
+---
+
+© 2026 daheww-wq. 이 저장소의 문서와 코드는 허락 없이 사용·재배포할 수 없습니다.
