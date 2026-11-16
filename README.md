@@ -4,7 +4,7 @@ LangGraph 워크플로 · 사전 우선 + LLM 보완 · 개인 프로젝트
 
 주식을 막 시작한 사람이 들은 말(은어, 종목 약어, 오타, 관용구)을 그대로 물어도 표준 용어로 이어 사전 근거로 설명하고, 매매 판단은 하지 않는 멀티턴 에이전트입니다. Python과 LangGraph로 만들고, 랭퓨즈(Langfuse)로 노드별 실행 기록을 남겼습니다.
 
-무엇을 만들기로 했고 왜 그렇게 정했는지는 [PoC 기획서](docs/plan/PoC_기획서.md)에 정리했습니다.
+무엇을 만들기로 했고 왜 그렇게 정했는지는 [PoC 기획서](docs/plan/PoC_기획서.md)에 정리했습니다. 화면 설계는 [화면설계서 (PDF, 8장)](docs/wireframe/wireframe_주식용어QnA_Agent_261113.pdf)에 있습니다.
 
 ---
 
@@ -166,7 +166,7 @@ stock-term-agent/
 ├─ eval/              run_dev.py(개발용·측정용 실행), run_compliance.py(검수 단독), judge.py · rejudge.py(LLM 채점), review_queue.py(사람 검토 대기열)
 ├─ scripts/           chat.py(직접 대화), run_4th_261112.py(4차 실행), check_overlap_4th_261112.py(문항 겹침 점검), rescore_test_4th_261116.py(측정용 4차 기준 채점), draw_graph.py, langfuse_setup.py, langfuse_review_export.py, list_models.py, rq1_slang_check.py, 그 밖에 실행 묶음(ps1)과 점검용 스크립트
 ├─ tests/test_offline.py   LLM 없이 도는 점검 (노드마다 가짜 답을 넣어 분기만 확인)
-├─ docs/              기획서(plan), 이 문서의 그림(img), 슬라이드(deck), 패치 기록 원본(PATCHES_full.md)
+├─ docs/              기획서(plan), 화면설계서(wireframe, PDF · pptx), 이 문서의 그림(img), 슬라이드(deck), 패치 기록 원본(PATCHES_full.md)
 ├─ PATCHES.md         패치 기록 정리판
 ├─ AGENTS.md          코딩 도우미(Cursor 등)가 코드를 고칠 때 지킬 규칙
 ├─ docs_graph.mermaid 노드 연결 그림 원본 (scripts/draw_graph.py가 만듦)
